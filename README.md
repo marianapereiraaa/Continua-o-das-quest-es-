@@ -97,5 +97,36 @@ numeros = receber_numeros()
 
 print("Maior número:", maior_numero(numeros))
 print("Menor número:", menor_numero(numeros))
+ 
+Questão 64: 
+def calcular_soma(a, b, c):
+    soma = a + b + c
+
+    if soma > 21 and (a == 11 or b == 11 or c == 11):
+        soma -= 10
+
+    if soma > 21:
+        return -1
+
+    return soma
+
+a = int(input("Digite o primeiro número: "))
+b = int(input("Digite o segundo número: "))
+c = int(input("Digite o terceiro número: "))
+
+Questão 65: 
+def calcularCubo(numero):
+    return numero ** 3
+
+
+def calcularDivisaoCubo(numero):
+    if numero % 3 == 0:
+        return calcularCubo(numero)
+    else:
+        return False
+
+numero = int(input("Digite um número: "))
+
+print(calcularDivisaoCubo(numero))
 
 
