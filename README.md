@@ -99,6 +99,7 @@ print("Maior número:", maior_numero(numeros))
 print("Menor número:", menor_numero(numeros))
  
 Questão 64: 
+
 def calcular_soma(a, b, c):
     soma = a + b + c
 
@@ -109,7 +110,6 @@ def calcular_soma(a, b, c):
         return -1
 
     return soma
-
 a = int(input("Digite o primeiro número: "))
 b = int(input("Digite o segundo número: "))
 c = int(input("Digite o terceiro número: "))
