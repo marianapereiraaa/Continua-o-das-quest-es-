@@ -414,3 +414,127 @@ for p, pr, q in testes_produtos:
   except ValueError as e:
     print(f"Erro no cadastro: {e}")
 
+Questão 80: 
+class ProdutoInvalidoError(Exception):
+  pass
+
+
+class ValorInvalidoError(Exception):
+  pass
+
+
+class QuantidadeInvalidaError(Exception):
+  pass
+
+
+
+def registrar_venda(produto, preco, quantidade):
+  if not isinstance(produto, str) or not produto.strip():
+    raise ProdutoInvalidoError("O nome do produto não pode estar vazio.")
+
+  try:
+    preco_float = float(preco)
+  except (ValueError, TypeError):
+    raise ValorInvalidoError("O preço deve ser um número válido.")
+
+  if preco_float <= 0:
+    raise ValorInvalidoError("O preço deve ser maior que zero.")
+
+  try:
+    qtd_int = int(quantidade)
+  except (ValueError, TypeError):
+    raise QuantidadeInvalidaError(
+        "A quantidade deve ser um número inteiro válido."
+    )
+
+  if qtd_int <= 0:
+    raise QuantidadeInvalidaError("A quantidade deve ser um número inteiro positivo.")
+
+  total_compra = preco_float * qtd_int
+  return {
+      "produto": produto,
+      "preco": preco_float,
+      "quantidade": qtd_int,
+      "total": total_compra,
+  }
+
+
+
+def gerar_relatorio(vendas):
+  if not vendas:
+    print("\nNenhuma venda válida registrada hoje.")
+    return
+
+  total_vendas_realizadas = len(vendas)
+  faturamento_total = sum(v["total"] for v in vendas)
+  ticket_medio = faturamento_total / total_vendas_realizadas
+
+ 
+  contagem_produtos = {}
+  for v in vendas:
+    prod = v["produto"]
+    contagem_produtos[prod] = contagem_produtos.get(prod, 0) + v["quantidade"]
+
+  produto_mais_vendido = max(contagem_produtos, key=contagem_produtos.get)
+
+  print("\n====== RELATÓRIO DE VENDAS DIÁRIO ======")
+  print(f"Quantidade total de vendas realizadas: {total_vendas_realizadas}")
+  print(f"Produto mais vendido: {produto_mais_vendido}")
+  print(f"Faturamento total da loja: R$ {faturamento_total:.2f}")
+  print(f"Ticket médio por venda: R$ {ticket_medio:.2f}")
+  print("========================================")
+
+
+
+  vendas_validas = []
+
+  print("--- Sistema de Registro de Vendas ---")
+  print("Digite 'fim' no nome do produto para encerrar e gerar o relatório.\n")
+
+  while True:
+    try:
+      produto = input("Nome do produto: ").strip()
+      if produto.lower() == "fim":
+        break
+
+      preco_input = input("Preço unitário: ")
+      qtd_input = input("Quantidade vendida: ")
+
+     
+      venda = registrar_venda(produto, preco_input, qtd_input)
+
+    except (
+        ProdutoInvalidoError,
+        ValorInvalidoError,
+        QuantidadeInvalidaError,
+    ) as e:
+      print(f"[ERRO DE VALIDAÇÃO]: {e}")
+     
+      try:
+        with open("log_erros.txt", "a", encoding="utf-8") as log_file:
+          log_file.write(f"Erro: {e}\n")
+      except IOError:
+        print("Não foi possível gravar no arquivo de log.")
+
+    else:
+      vendas_validas.append(venda)
+      print(f"-> Venda de '{produto}' registrada com sucesso!\n")
+
+    finally:
+      print(
+          "[STATUS]: Tentativa de registro processada.\n"
+          + "-" * 35
+      )
+  gerar_relatorio(vendas_validas)
+
+  if vendas_validas:
+    try:
+      with open("vendas.txt", "w", encoding="utf-8") as arquivo_vendas:
+        for v in vendas_validas:
+          arquivo_vendas.write(
+              f"Produto: {v['produto']}, Preço: {v['preco']}, Qtd: {v['quantidade']}, Total: {v['total']}\n"
+          )
+      print("Dados salvos com sucesso em 'vendas.txt'.")
+    except IOError:
+      print("Erro ao tentar salvar o arquivo de vendas.")
+
