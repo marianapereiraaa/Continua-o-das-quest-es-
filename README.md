@@ -5,3 +5,4 @@ def contar_caractere(string, caractere):
 string = input("Digite uma string:")
 caractere = input("Digite um caractere:")
 contar_caractere(string, caractere)
+Questão 58:
