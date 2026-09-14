@@ -111,6 +111,7 @@ def calcular_soma(a, b, c):
 
     return soma
 
+
 a = int(input("Digite o primeiro número: "))
 b = int(input("Digite o segundo número: "))
 c = int(input("Digite o terceiro número: "))
@@ -129,5 +130,18 @@ def calcularDivisaoCubo(numero):
 numero = int(input("Digite um número: "))
 
 print(calcularDivisaoCubo(numero))
+
+Questão 66: 
+def calcular_animais(cabecas, pernas):
+    coelhos = (pernas - (cabecas * 2)) // 2
+    galinhas = cabecas - coelhos
+
+    return coelhos, galinhas
+
+
+coelhos, galinhas = calcular_animais(35, 94)
+
+print("Coelhos:", coelhos)
+print("Galinhas:", galinhas)
 
 
