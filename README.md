@@ -58,7 +58,6 @@ def numero_perfeito(numero):
             soma += i
   
      return soma == numero 
-
 numero = int(input("Digite um número: "))
 
 if numero_perfeito(numero):
@@ -76,7 +75,6 @@ def receber_numeros():
 
     return numeros
 
-
 def maior_numero(numeros):
     maior = numeros[0]
 
@@ -86,7 +84,6 @@ def maior_numero(numeros):
 
     return maior
 
-
 def menor_numero(numeros):
     menor = numeros[0]
 
@@ -95,7 +92,6 @@ def menor_numero(numeros):
             menor = numero
 
     return menor
-
 
 numeros = receber_numeros()
 
