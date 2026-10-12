@@ -45,18 +45,21 @@ for i in range(1, 21):
     print(f"Assento: {i}")
     
 questao 8:
+
 total = 0
 for i in range(1, 6):
     total += float(input(f"Quantidade do voluntário {i}: "))
 print(f"Total arrecadado: {total}")
 
 questao 9:
+
 livros = []
 for i in range(3):
     livros.append(input(f"Título do {i+1}º livro: "))
 print("Livros cadastrados:", livros)
 
 questao 10:
+
 dias = (
     "Segunda",
     "Terça",
@@ -71,6 +74,7 @@ print("Primeiro dia:", dias[0])
 
 
  questão 57:
+
 def contar_caractere(string, caractere):
     print(string.count(caractere))
 string = input("Digite uma string:")
@@ -78,11 +82,13 @@ caractere = input("Digite um caractere:")
 contar_caractere(string, caractere)
 
 Questão 58:
+
 def calcular_gorjeta(conta): 
     gorjeta = conta * 0.10 
     print(f"Gorjeta: R$ {gorjeta:.2f}")
 
 Questão 59: 
+
 def escolher_numero(a, b):
     if a % 2 == 0 and b % 2 == 0:
         return min(a, b)
@@ -97,6 +103,7 @@ resultado = escolher_numero(a, b)
 print("Resultado:", resultado)
 
 Questão 60: 
+
 def converter_temperatura(f):
     c = (5 / 9) * (f - 32)
     return c
@@ -109,6 +116,7 @@ resultado = converter_temperatura(f)
 print("Temperatura em Celsius:", resultado)
 
 Questão 61: 
+
 def inverter(string):
     return string[::-1]
 
@@ -120,6 +128,7 @@ print(inverter("arara rara"))
 print(inverter("anotaram a data da maratona"))
 
 Questão 62: 
+
 def numero_perfeito(numero):
     soma = 0
 
@@ -136,6 +145,7 @@ else:
     print("Não é um número perfeito.")
 
 Questão 63: 
+
 def receber_numeros():
     numeros = []
 
@@ -170,6 +180,7 @@ print("Menor número:", menor_numero(numeros))
  
 Questão 64: 
 
+
 def calcular_soma(a, b, c):
     soma = a + b + c
 
@@ -187,6 +198,7 @@ b = int(input("Digite o segundo número: "))
 c = int(input("Digite o terceiro número: "))
 
 Questão 65: 
+
 def calcularCubo(numero):
     return numero ** 3
 
@@ -202,6 +214,7 @@ numero = int(input("Digite um número: "))
 print(calcularDivisaoCubo(numero))
 
 Questão 66: 
+
 def calcular_animais(cabecas, pernas):
     coelhos = (pernas - (cabecas * 2)) // 2
     galinhas = cabecas - coelhos
@@ -215,6 +228,7 @@ print("Coelhos:", coelhos)
 print("Galinhas:", galinhas)
 
 Questão 67: 
+
 while True:
     try:
         idade = int(input("Digite sua idade: "))
@@ -230,6 +244,7 @@ while True:
 print("Idade:", idade)
  
 Questão 68:
+
 try:
     lucros = float(input("Digite os lucros: "))
     acionistas = int(input("Digite a quantidade de acionistas: "))
@@ -245,6 +260,7 @@ except ValueError:
     print("Digite apenas valores numéricos.")
 
 Questão 69:
+
 try:
     arquivo = open("relatorio_vendas.txt", "r")
 
@@ -261,6 +277,7 @@ finally:
     print("Encerramento do recurso.")
 
 Questão 70: 
+
 def buscar_permissao(perfis, perfil, indice):
     try:
         return perfis[perfil][indice]
@@ -276,6 +293,7 @@ perfis = {
 print(buscar_permissao(perfis, "admin", 1))
 
 Questão 71: 
+
 class SaldoInsuficienteError(Exception):
     pass
 
@@ -301,6 +319,7 @@ except SaldoInsuficienteError as erro:
     print(erro)
 
 Questão 72: 
+
 class SaldoInsuficienteError(Exception):
     pass
 
@@ -312,6 +331,7 @@ def sacar(saldo, valor):
     return saldo - valor
 
 Questão 73: 
+
 precos = ["30", "50", "70"]
 
 for preco in precos:
@@ -326,6 +346,7 @@ for preco in precos:
         valor_final = valor - desconto
 
 Questão 74: 
+
 produtos = {
     1: "Notebook",
     2: "Celular",
@@ -359,6 +380,7 @@ print(buscar_produto(1))
 print(buscar_produto(10))
 
 Questão 75: 
+
 import time
 
 
@@ -382,6 +404,7 @@ def conectar_api():
   return True
 
 Questão 76: 
+
 import traceback
 
 
@@ -406,6 +429,7 @@ dados = [10, "20", "abc", 40, None, "50.5"]
 processar_dados(dados)
 
 Questão 77: 
+
 def realizar_saque(saldo, valor_saque):
   if valor_saque <= 0:
     raise ValueError("O valor do saque deve ser positivo.")
@@ -424,6 +448,7 @@ for valor in saques_para_testar:
     print(f"\nTentando sacar R$ {valor:.2f}...")
 
 Questão 78: 
+
 def calcular_media(n1, n2, n3):
   
   if not all(isinstance(n, (int, float)) for n in [n1, n2, n3]):
@@ -459,6 +484,7 @@ for notas in entradas_teste:
     print(f"Erro nos dados informados: {e}")
 
 Questão 79:
+
 def cadastrar_produto(nome, preco, quantidade):
   if not isinstance(nome, str) or not nome.strip():
     raise ValueError("O nome do produto não pode ser vazio.")
@@ -485,6 +511,7 @@ for p, pr, q in testes_produtos:
     print(f"Erro no cadastro: {e}")
 
 Questão 80: 
+
 class ProdutoInvalidoError(Exception):
   pass
 
