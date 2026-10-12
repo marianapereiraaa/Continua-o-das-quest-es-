@@ -1,5 +1,68 @@
 
 # Continua-o-das-quest-es-
+questão 1:
+livros = int(input("Quantos livros a turma leu?"))
+print (livros)
+print(f"A turma vencedora leu {livros} livros.")
+
+questão 2: 
+nome = input("Digite o nome do estudante: ")
+print(f"Bem-vindo(a) ao sistema, {nome}!")
+
+questão 3:
+setor1 = float(input("Digite a produção do setor 1: "))
+setor2 = float(input("Digite a produção do setor 2: "))
+print(f"A produção total do dia é: {setor1 + setor2}")
+
+questão 4:
+n1 = float(input("Digite a primeira nota: "))
+n2 = float(input("Digite a segunda nota: "))
+print(f"Média do estudante: {(n1 + n2) / 2:.2f}")
+
+questao 5:
+compra = float(input("Digite o valor da compra: R$ "))
+if compra >= 500.00:
+    print("Cliente tem direito ao desconto promocional!")
+else:
+    print("Cliente não tem direito ao desconto.")
+
+questao 6: 
+codigo = int(input("Digite o código do equipamento: "))
+if codigo % 2 == 0:
+    print("Setor administrativo (par).")
+else:
+    print("Setor operacional (ímpar).")
+
+questao 7:
+
+for i in range(1, 21):
+    print(f"Assento: {i}")
+    
+questao 8:
+total = 0
+for i in range(1, 6):
+    total += float(input(f"Quantidade do voluntário {i}: "))
+print(f"Total arrecadado: {total}")
+
+questao 9:
+livros = []
+for i in range(3):
+    livros.append(input(f"Título do {i+1}º livro: "))
+print("Livros cadastrados:", livros)
+
+questao 10:
+dias = (
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado",
+    "Domingo",
+)
+print("Primeiro dia:", dias[0])
+
+
 
  questão 57:
 def contar_caractere(string, caractere):
@@ -483,8 +546,7 @@ def gerar_relatorio(vendas):
   print(f"Produto mais vendido: {produto_mais_vendido}")
   print(f"Faturamento total da loja: R$ {faturamento_total:.2f}")
   print(f"Ticket médio por venda: R$ {ticket_medio:.2f}")
-  print("========================================")
-
+ 
 
 
   vendas_validas = []
