@@ -1,3 +1,4 @@
+
 # Continua-o-das-quest-es-
 
  questão 57:
@@ -497,44 +498,5 @@ def gerar_relatorio(vendas):
       if produto.lower() == "fim":
         break
 
-      preco_input = input("Preço unitário: ")
-      qtd_input = input("Quantidade vendida: ")
-
-     
-      venda = registrar_venda(produto, preco_input, qtd_input)
-
-    except (
-        ProdutoInvalidoError,
-        ValorInvalidoError,
-        QuantidadeInvalidaError,
-    ) as e:
-      print(f"[ERRO DE VALIDAÇÃO]: {e}")
-     
-      try:
-        with open("log_erros.txt", "a", encoding="utf-8") as log_file:
-          log_file.write(f"Erro: {e}\n")
-      except IOError:
-        print("Não foi possível gravar no arquivo de log.")
-
-    else:
-      vendas_validas.append(venda)
-      print(f"-> Venda de '{produto}' registrada com sucesso!\n")
-
-    finally:
-      print(
-          "[STATUS]: Tentativa de registro processada.\n"
-          + "-" * 35
-      )
-  gerar_relatorio(vendas_validas)
-
-  if vendas_validas:
-    try:
-      with open("vendas.txt", "w", encoding="utf-8") as arquivo_vendas:
-        for v in vendas_validas:
-          arquivo_vendas.write(
-              f"Produto: {v['produto']}, Preço: {v['preco']}, Qtd: {v['quantidade']}, Total: {v['total']}\n"
-          )
-      print("Dados salvos com sucesso em 'vendas.txt'.")
-    except IOError:
-      print("Erro ao tentar salvar o arquivo de vendas.")
-
+      
+  
