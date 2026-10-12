@@ -1,6 +1,7 @@
 
 # Continua-o-das-quest-es-
 questão 1:
+
 livros = int(input("Quantos livros a turma leu?"))
 print (livros)
 print(f"A turma vencedora leu {livros} livros.")
