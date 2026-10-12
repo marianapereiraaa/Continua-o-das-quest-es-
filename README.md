@@ -7,20 +7,24 @@ print (livros)
 print(f"A turma vencedora leu {livros} livros.")
 
 questão 2: 
+
 nome = input("Digite o nome do estudante: ")
 print(f"Bem-vindo(a) ao sistema, {nome}!")
 
 questão 3:
+
 setor1 = float(input("Digite a produção do setor 1: "))
 setor2 = float(input("Digite a produção do setor 2: "))
 print(f"A produção total do dia é: {setor1 + setor2}")
 
 questão 4:
+
 n1 = float(input("Digite a primeira nota: "))
 n2 = float(input("Digite a segunda nota: "))
 print(f"Média do estudante: {(n1 + n2) / 2:.2f}")
 
 questao 5:
+
 compra = float(input("Digite o valor da compra: R$ "))
 if compra >= 500.00:
     print("Cliente tem direito ao desconto promocional!")
@@ -28,6 +32,7 @@ else:
     print("Cliente não tem direito ao desconto.")
 
 questao 6: 
+
 codigo = int(input("Digite o código do equipamento: "))
 if codigo % 2 == 0:
     print("Setor administrativo (par).")
